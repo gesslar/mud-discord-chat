@@ -1,11 +1,15 @@
-require("dotenv").config()
 const path = require("path")
+
+// Config
+const config = require(path.join(__dirname, "config"))
+
+// Discord stuff
 const { Client, Message } = require("discord.js")
 const discordClient = new Client()
+
+/// Mudclient stuff
 const net = require("net")
 const mudClient = new net.Socket()
-const discordToken = process.env.DISCORD_TOKEN
-const config = require(path.join(__dirname, "config"))
 
 function connectToMud() {
     mudClient.connect( config.mud_port, config.mud_ip, () => {
@@ -31,7 +35,7 @@ mudClient.on("data", data => {
 
 connectToMud() ;
 
-discordClient.login(discordToken)
+discordClient.login(config.discordToken)
 .then( () => {
     console.log(`Logged into Discord`)
     //TODO: create a global array that handles what channels we found so we will only
