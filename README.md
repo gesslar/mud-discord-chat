@@ -47,8 +47,9 @@ Copy `config.json.example` to `config.json` and modify the values to suit your D
 `mud-discord-chat` sends and receives a JSON object in the form of:
 ```json
 {
-    "channel" : String mud_channel_name,
-    "name" : String name of the user,
-    "message" : String chat message
+    "channel" : "String",
+    "name" : "String",
+    "message" : "String"
 }
 ```
+Where `channel` is the mud channel name, `name` is the name of the user/player, and `message` is the chat message.
