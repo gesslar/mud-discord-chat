@@ -24,6 +24,11 @@ Create a `.env` file in the root of the Node.js directory to house the following
 DISCORD_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXX.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+If you opt into bit.ly integration, you will need to add your token to your `.env` file as well.
+```
+BITLY_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
 ### Step 4
 
 Copy `config.json.example` to `config.json` and modify the values to suit your Discord/MUD.
@@ -38,7 +43,9 @@ Copy `config.json.example` to `config.json` and modify the values to suit your D
         { "discord" : "783942759576371200", "mud" : "trivia" },
         { "discord" : "844254742989373450", "mud" : "heritage" },
         { "discord" : "844254814518247444", "mud" : "question" }
-    ]
+    ],
+    "strip_emoji" : true,
+    "enable_bitly" : false
 }
 ```
 
