@@ -3,7 +3,6 @@ const path = require("path")
 const { Client, Message } = require("discord.js")
 const discordClient = new Client()
 const net = require("net")
-const { connect } = require("http2")
 const mudClient = new net.Socket()
 const discordToken = process.env.DISCORD_TOKEN
 const config = require(path.join(__dirname, "config"))
