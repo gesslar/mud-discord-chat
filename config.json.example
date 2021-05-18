@@ -6,5 +6,7 @@
         { "discord" : "783942759576371200", "mud" : "trivia" },
         { "discord" : "844254742989373450", "mud" : "heritage" },
         { "discord" : "844254814518247444", "mud" : "question" }
-    ]
+    ],
+    "strip_emoji" : true,
+    "enable_bitly" : false
 }

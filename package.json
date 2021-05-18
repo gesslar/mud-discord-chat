@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/gesslar/mud-discord-chat#readme",
   "dependencies": {
+    "bitly": "^7.1.2",
     "discord.js": "^12.5.3",
-    "dotenv": "^9.0.2"
+    "dotenv": "^9.0.2",
+    "emoji-regex": "^9.2.2",
+    "url-regex-safe": "^2.0.2"
   }
 }
