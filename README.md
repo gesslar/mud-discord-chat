@@ -42,7 +42,7 @@ Copy `config.json.example` to `config.json` and modify the values to suit your D
 }
 ```
 
-`channels` is an array of objects with the discord channel ID and the mud channel name.
+`channels` is an array of objects with the Discord channel ID and the mud channel name.
 
 `mud-discord-chat` sends and receives a JSON object in the form of:
 ```json
