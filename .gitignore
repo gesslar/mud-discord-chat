@@ -1,3 +1,6 @@
+# Project files not to include in git
+/config.json
+
 # Logs
 logs
 *.log
