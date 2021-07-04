@@ -63,8 +63,9 @@ mudClient.on("data", data => {
     const messageData = JSON.parse(data.toString()) ;
     for(channel of config.channels) {
         if(messageData.channel === channel.mud) {
-            const discordChannel = discordClient.channels.cache.get(channel.discord) 
-            discordChannel.send(`${messageData.name}: ${messageData.message}`)
+            const discordChannel = discordClient.channels.cache.get(channel.discord)
+            if( messageData.emoted === 0 ) discordChannel.send(`${messageData.name}: ${messageData.message}`)
+            else discordChannel.send(`${messageData.message}`)
         }
     }     
 }) 
