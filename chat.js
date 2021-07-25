@@ -90,38 +90,76 @@ discordClient.on("message", async message => {
     if(message.content.length < 1) return ;
     if(message.member.user.bot === true) return ;
 
+    let messageText = message.content.replace(/<@!*\d*>/g, mention => {
+        if (mention.startsWith('<@') && mention.endsWith('>')) {
+            mention = mention.slice(2, -1)
+    
+            if (mention.startsWith('!')) {
+                mention = mention.slice(1)
+            }
+
+            const result = message.guild.member(mention)
+            mention = result.displayName || result.username
+        }
+
+        return mention 
+    }) 
+
+    if(message.content.length > config.largest_printable_string) return ;
+
     //Find the right channel to have listened on, discard any other channels
     for(channel of config.channels) {
         if(message.channel.id === channel.discord) {
             const mudChannel = channel.mud
             let authorName = message.member.nickname || message.member.user.username
-            let text = message.content 
 
             // If option to strip emoji is on, which is probably a good idea
             // and is why it is the default
             if( config.strip_emoji === true ) {
                 const regex = emojiRegexText()
                 authorName = authorName.replace(regex, "")
-                text = text.replace(regex, "") 
+                messageText = messageText.replace(regex, "") 
             }
 
             // After emoji stripping, need to now exit if our
             // author or text is empty. 
             if( authorName.length < 1 ) return ;
-            if( text.length < 1 ) return ;
+            if( messageText.length < 1 ) return ;
 
             // Now we need to parse urls if bitly is enabled
-            if(config.enable_bitly) text = await shortenUrls(text)
+            if(config.enable_bitly) messageText = await shortenUrls(messageText)
 
             const mudMessage = {
                 name: authorName,
                 channel: mudChannel,
-                message: text
+                message: messageText
             }
 
             mudClient.write(JSON.stringify(mudMessage))
         }
     }    
 })
+
+function parseMentions(message) {
+    console.log(message.content) 
+    // const args = message.content.slice(prefix.length).trim().split(/ +/) 
+    // const command = args.shift().toLowerCase()
+
+    return message
+}
+
+function getUserFromMention(mention) {
+	if (!mention) return 
+
+	if (mention.startsWith('<@') && mention.endsWith('>')) {
+		mention = mention.slice(2, -1) 
+
+		if (mention.startsWith('!')) {
+			mention = mention.slice(1) 
+		}
+
+		return client.users.cache.get(mention) 
+	}
+}
 
 connectToMud() ;

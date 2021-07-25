@@ -8,5 +8,6 @@
         { "discord" : "844254814518247444", "mud" : "question" }
     ],
     "strip_emoji" : true,
-    "enable_bitly" : false
+    "enable_bitly" : false,
+    "largest_printable_string" : 65535
 }
