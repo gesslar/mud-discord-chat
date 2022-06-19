@@ -13,7 +13,8 @@ const mudClient = new net.Socket()
 
 // Miscellaneous stuff
 const urlRegexSafe = require("url-regex-safe");
-const emojiRegexText = require("emoji-regex/text.js")
+// const emojiRegexText = require("emoji-regex/text.js")
+const emojiRegexText = require("emoji-regex/RGI_Emoji.js")
 const { write } = require("fs")
 const BitlyClient = require('bitly').BitlyClient;
 const { S_IFBLK } = require("constants")
@@ -116,9 +117,8 @@ discordClient.on("message", async message => {
             // If option to strip emoji is on, which is probably a good idea
             // and is why it is the default
             if( config.strip_emoji === true ) {
-                const regex = emojiRegexText()
-                authorName = authorName.replace(regex, "")
-                messageText = messageText.replace(regex, "") 
+                authorName = stripEmoji(authorName)
+                messageText = stripEmoji(messageText)
             }
 
             // After emoji stripping, need to now exit if our
@@ -160,6 +160,17 @@ function getUserFromMention(mention) {
 
 		return client.users.cache.get(mention) 
 	}
+}
+
+function stripEmoji(str) {
+    
+    const reg = /<?:\w+:\d{18}>?/g
+    str = str.replace(reg, "")
+
+    const regex = emojiRegexText()
+    str = str.replace(regex, "")
+
+    return str
 }
 
 connectToMud() ;
