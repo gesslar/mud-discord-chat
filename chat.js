@@ -108,7 +108,7 @@ discordClient.once(Events.ClientReady, c => {
     }
 })
 
-discordClient.once(Events.MessageCreate, message => {
+discordClient.on(Events.MessageCreate, message => {
     // Do not accept zero-length content.
     if (message.content.length < 1) return;
     if (message.member.user.bot === true) return;
