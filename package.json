@@ -20,8 +20,8 @@
   "dependencies": {
     "bitly": "^7.1.2",
     "discord.js": "^14.13.0",
-    "dotenv": "^9.0.2",
-    "emoji-regex": "^9.2.2",
+    "dotenv": "^16.3.1",
+    "emoji-regex": "^10.2.1",
     "re2": "^1.20.1",
     "url-regex-safe": "^4.0.0"
   }
