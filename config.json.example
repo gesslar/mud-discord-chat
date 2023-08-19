@@ -2,6 +2,8 @@
     "mud_name" : "ThresholdRPG",
     "mud_ip" : "127.0.0.1",
     "mud_port": 8181,
+    "mud_retry_count": 5,
+    "mud_retry_delay": 30000,
     "channels" : [
         { "discord" : "783942759576371200", "mud" : "trivia" },
         { "discord" : "844254742989373450", "mud" : "heritage" },
