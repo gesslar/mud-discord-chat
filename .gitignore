@@ -1,5 +1,6 @@
 # Project files not to include in git
 /config.json
+/ecosystem.config.js
 
 # Logs
 logs
