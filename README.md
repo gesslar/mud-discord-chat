@@ -61,3 +61,19 @@ Copy `config.json.example` to `config.json` and modify the values to suit your D
 }
 ```
 Where `channel` is the mud channel name, `name` is the name of the user/player, and `message` is the chat message.
+
+## License
+
+`mud-discord-chat` is released under the [0BSD](LICENSE.txt).
+
+This package includes or depends on third-party components under their own
+licenses:
+
+| Dependency | License |
+| --- | --- |
+| [bitly](https://github.com/tanepiper/node-bitly) | MIT |
+| [discord.js](https://github.com/discordjs/discord.js) | Apache-2.0 |
+| [dotenv](https://github.com/motdotla/dotenv) | BSD-2-Clause |
+| [emoji-regex](https://github.com/mathiasbynens/emoji-regex) | MIT |
+| [re2](https://github.com/uhop/node-re2) | BSD-3-Clause |
+| [url-regex-safe](https://github.com/spamscanner/url-regex-safe) | MIT |
