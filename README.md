@@ -60,6 +60,7 @@ Copy `config.json.example` to `config.json` and modify the values to suit your D
     "message" : "String"
 }
 ```
+
 Where `channel` is the mud channel name, `name` is the name of the user/player, and `message` is the chat message.
 
 ## License
