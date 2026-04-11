@@ -1,28 +1,30 @@
 {
   "name": "mud-discord-chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample on how to setup a Discord bot with an LP server. ",
   "main": "chat.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "update": "npx npm-check-updates -u && npm install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gesslar/mud-discord-chat.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "Unlicense",
+  "author": {
+    "name": "gesslar"
+  },
+  "license": "0BSD",
   "bugs": {
     "url": "https://github.com/gesslar/mud-discord-chat/issues"
   },
   "homepage": "https://github.com/gesslar/mud-discord-chat#readme",
   "dependencies": {
     "bitly": "^7.1.2",
-    "discord.js": "^14.13.0",
-    "dotenv": "^16.3.1",
-    "emoji-regex": "^10.2.1",
-    "re2": "^1.20.1",
+    "discord.js": "^14.26.2",
+    "dotenv": "^17.4.1",
+    "emoji-regex": "^10.6.0",
+    "re2": "^1.24.0",
     "url-regex-safe": "^4.0.0"
   }
 }
